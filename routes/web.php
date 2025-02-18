@@ -14,9 +14,10 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return redirect('/import');
+    // return view('welcome');
+});
 
 
 Route::get('/import', function () {
@@ -24,3 +25,4 @@ Route::get('/import', function () {
 });
 
 Route::post('/import', [ContactController::class, 'importXml']);
+Route::get('/contacts', [ContactController::class, 'showContacts'])->name('contacts');

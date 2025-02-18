@@ -8,6 +8,12 @@ use SimpleXMLElement;
 
 class ContactController extends Controller
 {
+    public function showContacts()
+    {
+        $contacts = Contact::all();  // Fetch all contacts from the database
+        return view('contacts', compact('contacts'));  // Pass contacts to the view
+    }
+
     public function importXml(Request $request)
     {
         // Validate the uploaded XML file
